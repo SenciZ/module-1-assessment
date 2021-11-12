@@ -1,5 +1,7 @@
 const readline = require("readline");
 const figlet = require("figlet");
+const colors = require("colors");
+
 
 const reader = readline.createInterface({
   input: process.stdin,
@@ -20,15 +22,15 @@ reader.question(
       console.log("Your password is not long enough.");
     } else if (input.length > 10 && found2 === true && found === true) {
       //Check to see if entered password is at least 10 characters and if it contains 1 or more special character AND 1 or more number
-      console.log(figlet.textSync("GREAT SUCCESS!!!"));
+      console.log(figlet.textSync("GREAT SUCCESS!!!").brightGreen);
       console.log("You have succesfully validated your password and it is VERY STRONG!!!!");
     } else if (input.length > 10 && found2 === true || found === true) {
       //Check to see if entered password is at least 10 characters and if it contains 1 or more special character or 1 or more number
-      console.log(figlet.textSync("VERY NICE"));
+      console.log(figlet.textSync("VERY NICE").brightYellow);
       console.log("You have succesfully validated your password and it is STRONG!!!");
     } else {
       //If the entered password is at least 10 characters long but does not contain any numbers or special characters
-      console.log(figlet.textSync("SUCCESS"));
+      console.log(figlet.textSync("SUCCESS").brightBlue);
       console.log("You have succesfully validated your password!");
     }
     // This line closes the connection to the command line interface.
